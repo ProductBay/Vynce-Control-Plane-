@@ -1,0 +1,24 @@
+{
+  "name": "vynce-control-plane",
+  "version": "1.0.0",
+  "description": "Commercial control plane backend for Vynce",
+  "main": "src/server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "migrate": "node src/db/migrate.js",
+    "check": "node --check src/server.js && node --check src/app.js && node --check src/config/env.js && node --check src/controllers/adminController.js && node --check src/controllers/healthController.js && node --check src/controllers/licenseController.js && node --check src/db/migrate.js && node --check src/db/pool.js && node --check src/db/query.js && node --check src/middleware/adminAuth.js && node --check src/middleware/corsPolicy.js && node --check src/middleware/errorHandler.js && node --check src/middleware/notFound.js && node --check src/middleware/rateLimit.js && node --check src/middleware/securityHeaders.js && node --check src/middleware/validate.js && node --check src/models/activationEventModel.js && node --check src/models/activationModel.js && node --check src/models/auditModel.js && node --check src/models/licenseModel.js && node --check src/models/seatEntitlementModel.js && node --check src/routes/adminRoutes.js && node --check src/routes/healthRoutes.js && node --check src/routes/licenseRoutes.js && node --check src/services/adminService.js && node --check src/services/auditService.js && node --check src/services/licenseService.js && node --check src/services/tokenService.js && node --check src/utils/appError.js && node --check src/utils/asyncHandler.js && node --check src/utils/hash.js && node --check src/utils/license.js",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=20.11.0"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.21.2",
+    "jose": "^5.9.6",
+    "pg": "^8.13.1",
+    "zod": "^3.24.1"
+  }
+}
